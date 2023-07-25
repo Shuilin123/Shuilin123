@@ -2,7 +2,8 @@
   <div align="center">
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=800&lines=print(Shui Lin wishes you happy coding);&center=true&size=30" alt="Typing SVG" />
   </div>
- <div align="left"> <img src="https://metrics.lecoq.io/Shuilin123?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Asia%2FShanghai"> </div>
+ <div align="left"> <img src="https://metrics.lecoq.io/Shuilin123?template=classic&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=false&base.hireable=false&base.skip=false&config.timezone=Asia%2FShanghai" />'
+ </div>
  <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Shuilin123/Shuilin123/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Shuilin123/Shuilin123/output/github-contribution-grid-snake.svg">
