@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李艳秋的成长档案 | </title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Comic+Neue:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        /* ===== CSS变量 - 小学生友好配色 ===== */
+        :root {
+            --primary-color: #4ECDC4; /* 清新蓝绿色 */
+            --secondary-color: #FF6B6B; /* 温暖粉色 */
+            --accent-color: #FFD166; /* 明亮黄色 */
+            --success-color: #06D6A0; /* 活力绿色 */
+            --warning-color: #FF9F1C; /* 橙色 */
+            --danger-color: #EF476F; /* 桃红色 */
+            
+            --neutral-50: #F7F9FC;
+            --neutral-100: #F0F4F8;
+            --neutral-200: #D9E2EC;
+            --neutral-300: #BCCCDC;
+            --neutral-400: #9FB3C8;
+            --neutral-500: #829AB1;
+            --neutral-600: #627D98;
+            --neutral-700: #486581;
+            --neutral-800: #334E68;
+            --neutral-900: #243B53;
+            
+            /* 更活泼的渐变 */
+            --gradient-primary: linear-gradient(135deg, #4ECDC4 0%, #45B7D1 100%);
+            --gradient-accent: linear-gradient(135deg, #FFD166 0%, #FF9F1C 100%);
+            --gradient-warm: linear-gradient(135deg, #FF6B6B 0%, #EF476F 100%);
+            --gradient-cool: linear-gradient(135deg, #4ECDC4 0%, #06D6A0 100%);
+            
+            /* 可爱的阴影效果 */
+            --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 12px 35px rgba(0, 0, 0, 0.15);
+            
+            /* 更圆润的边角 */
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-2xl: 2rem;
+            --radius-full: 9999px;
+            
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ===== 基础样式 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', 'Nunito', sans-serif;
+            line-height: 1.7;
+            color: var(--neutral-800);
+            background-color: #f9f7f3;
+            background-image: 
+                radial-gradient(#4ECDC4 0.5px, transparent 0.5px),
+                radial-gradient(#FFD166 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            overflow-x: hidden;
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        
+        /* 装饰元素 */
+        .decor-element {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .star {
+            font-size: 2rem;
+            color: var(--accent-color);
+            animation: twinkle 4s infinite;
+        }
+        
+        .heart {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            animation: float 6s infinite;
+        }
+        
+        .cloud {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            animation: float 8s infinite;
+        }
+        
+        .pencil {
+            font-size: 1.8rem;
+            color: var(--warning-color);
+            animation: spin 10s linear infinite;
+        }
+        
+        .book {
+            font-size: 2rem;
+            color: var(--success-color);
+            animation: float 7s infinite;
+        }
+        
+        .crayon {
+            font-size: 1.6rem;
+            color: var(--danger-color);
+            animation: twinkle 5s infinite;
+        }
+        
+        /* ===== A4文档容器 - 更新背景 ===== */
+        .document-container {
+            width: 210mm; /* A4宽度 */
+            min-height: 297mm; /* A4高度 */
+            margin: 0 auto;
+            padding: 20mm; /* A4页边距 */
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, #fef9f3 0%, #f5f9ff 100%);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-xl);
+            margin: 2rem auto;
+            overflow: hidden;
+            border: 8px solid white;
+            position: relative;
+        }
+        
+        /* 新增：文档背景装饰图案 */
+        .document-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234ECDC4' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60,10 C80,10 90,30 90,50 C90,70 70,90 60,90 C50,90 30,70 30,50 C30,30 40,10 60,10 Z' fill='%23FFD166' fill-opacity='0.03'/%3E%3C/svg%3E");
+            background-position: 10% 20%, 90% 80%;
+            background-repeat: no-repeat;
+            background-size: 150px, 100px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* 页面角落装饰 - 增强 */
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+            opacity: 0.7;
+            font-size: 2.5rem;
+        }
+        
+        .top-left {
+            top: 15mm;
+            left: 15mm;
+        }
+        
+        .top-right {
+            top: 15mm;
+            right: 15mm;
+            transform: rotate(90deg);
+        }
+        
+        .bottom-left {
+            bottom: 15mm;
+            left: 15mm;
+            transform: rotate(-90deg);
+        }
+        
+        .bottom-right {
+            bottom: 15mm;
+            right: 15mm;
+            transform: rotate(180deg);
+        }
+        
+        /* 新增：页面边框装饰 */
+        .page-border {
+            position: absolute;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        .page-border-top {
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--primary-color),
+                var(--primary-color) 10px,
+                var(--accent-color) 10px,
+                var(--accent-color) 20px,
+                var(--secondary-color) 20px,
+                var(--secondary-color) 30px
+            );
+        }
+        
+        .page-border-bottom {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--secondary-color),
+                var(--secondary-color) 10px,
+                var(--accent-color) 10px,
+                var(--accent-color) 20px,
+                var(--primary-color) 20px,
+                var(--primary-color) 30px
+            );
+        }
+        
+        /* ===== 封面设计 ===== */
+        .cover-page {
+            min-height: calc(297mm - 40mm); /* 减去页边距 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-2xl);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
+        
+        /* 封面装饰元素 - 增强 */
+        .cover-decoration {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .cover-star-1 {
+            top: 10%;
+            left: 15%;
+            transform: rotate(15deg);
+            animation: float 8s infinite;
+        }
+        
+        .cover-star-2 {
+            bottom: 15%;
+            right: 20%;
+            transform: rotate(-10deg);
+            animation: float 10s infinite;
+        }
+        
+        .cover-heart {
+            top: 20%;
+            right: 15%;
+            animation: float 7s infinite;
+        }
+        
+        .cover-cloud {
+            bottom: 20%;
+            left: 15%;
+            animation: float 9s infinite;
+        }
+        
+        /* 新增：封面动态装饰 */
+        .cover-pencil {
+            top: 40%;
+            left: 5%;
+            animation: float 6s infinite;
+        }
+        
+        .cover-book {
+            bottom: 40%;
+            right: 5%;
+            animation: float 8s infinite;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .cover-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.6rem;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .student-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            margin: 0 auto 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 
+                inset 0 0 30px rgba(255,255,255,0.3),
+                0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+            position: relative;
+        }
+        
+        .student-avatar::after {
+            content: '✨';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 2rem;
+            animation: spin 4s linear infinite;
+        }
+        
+        /* ===== 统计卡片 ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) rotate(1deg);
+            background: rgba(255,255,255,0.25);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* ===== 时间轴设计 ===== */
+        .timeline-container {
+            position: relative;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: var(--gradient-accent);
+            transform: translateX(-50%);
+            border-radius: var(--radius-full);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.5);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            border: 2px solid var(--neutral-200);
+            max-width: calc(50% - 40px);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 2rem;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-right: 2px solid var(--neutral-200);
+            border-top: 2px solid var(--neutral-200);
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 2rem;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-left: 2px solid var(--neutral-200);
+            border-top: 2px solid var(--neutral-200);
+            transform: rotate(-45deg);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+        
+        .timeline-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gradient-warm);
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            transform: translate(-50%, -50%);
+            border: 4px solid white;
+            box-shadow: 0 0 0 5px rgba(255, 107, 107, 0.2);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-dot::after {
+            content: '✦';
+            position: absolute;
+            color: white;
+            font-size: 1rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .timeline-dot:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            box-shadow: 0 0 0 8px rgba(255, 107, 107, 0.3);
+        }
+        
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.1);
+            padding: 0.2rem 0.8rem;
+            border-radius: var(--radius-full);
+        }
+        
+        .timeline-title {
+            font-family: 'Fredoka One', cursive;
+            color: var(--neutral-800);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-desc {
+            color: var(--neutral-600);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== 照片画廊 - 优化排版 ===== */
+        .gallery-section {
+            margin: 3rem 0;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px dotted var(--neutral-300);
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 8px;
+            background: var(--gradient-accent);
+            bottom: -4px;
+            left: 0;
+            border-radius: 4px;
+        }
+        
+        .section-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+            position: relative;
+        }
+        
+        .section-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px dashed white;
+            animation: spin 8s linear infinite;
+        }
+        
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        /* 新增：画廊标题装饰 */
+        .section-title::after {
+            content: '📷 ✨ 🎨';
+            position: absolute;
+            right: 0;
+            top: -10px;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        /* 优化照片网格布局 - 使用Masonry风格 */
+        .photo-grid-export {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+            grid-auto-flow: dense;
+        }
+        
+        /* 新增：不同大小的照片卡片 */
+        .photo-card-modern {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-normal);
+            border: 2px solid white;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 新增：不同高度的照片卡片 */
+        .photo-card-modern.tall {
+            grid-row: span 2;
+        }
+        
+        .photo-card-modern.wide {
+            grid-column: span 2;
+        }
+        
+        .photo-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient-cool);
+            z-index: 1;
+        }
+        
+        .photo-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        /* 新增：照片卡片装饰角 */
+        .photo-card-modern::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid var(--accent-color);
+            border-left: 20px solid transparent;
+            opacity: 0.7;
+        }
+        
+        .photo-image-container {
+            overflow: hidden;
+            position: relative;
+            flex-grow: 1;
+        }
+        
+        .photo-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+            border-bottom: 3px solid var(--neutral-100);
+        }
+        
+        .photo-card-modern.tall .photo-image {
+            height: 280px;
+        }
+        
+        .photo-card-modern.wide .photo-image {
+            height: 180px;
+        }
+        
+        .photo-card-modern:hover .photo-image {
+            transform: scale(1.05);
+        }
+        
+        /* 新增：照片装饰贴纸 */
+        .photo-sticker {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+            transform: rotate(10deg);
+            border: 2px dashed var(--accent-color);
+        }
+        
+        /* 不同类别的贴纸 */
+        .sticker-star {
+            background: linear-gradient(135deg, #FFD166, #FF9F1C);
+            color: white;
+        }
+        
+        .sticker-heart {
+            background: linear-gradient(135deg, #FF6B6B, #EF476F);
+            color: white;
+        }
+        
+        .sticker-book {
+            background: linear-gradient(135deg, #4ECDC4, #06D6A0);
+            color: white;
+        }
+        
+        .photo-content {
+            padding: 1.2rem;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .photo-title {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--neutral-800);
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+        
+        .photo-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .photo-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .photo-category {
+            background: var(--gradient-cool);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 182, 212, 0.2);
+        }
+        
+        .photo-semester {
+            color: var(--neutral-500);
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: var(--neutral-100);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+        }
+        
+        .photo-description {
+            color: var(--neutral-600);
+            line-height: 1.6;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed var(--neutral-200);
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .photo-description::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            left: -5px;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            opacity: 0.5;
+        }
+        
+        /* 分类组样式 */
+        .category-group {
+            margin-bottom: 3rem;
+            page-break-after: avoid;
+            position: relative;
+            padding-top: 1rem;
+        }
+        
+        .category-group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--accent-color),
+                var(--accent-color) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+        }
+        
+        .category-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid var(--primary-color);
+            display: inline-block;
+            background: rgba(78, 205, 196, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        }
+        
+        /* 分类图标装饰 */
+        .category-icon {
+            display: inline-block;
+            margin-right: 0.8rem;
+            color: var(--accent-color);
+        }
+        
+        /* ===== 成长寄语部分 ===== */
+        .message-section {
+            margin: 4rem 0 2rem;
+            background: linear-gradient(135deg, rgba(78,205,196,0.1) 0%, rgba(255,209,102,0.1) 100%);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 2px dashed var(--primary-color);
+        }
+        
+        .message-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L5 5l25 25 25-25L30 30zm0 0L5 55l25-25 25 25L30 30zm0 0l-25-25 25 25 25-25-25 25zm0 0l25 25-25 25-25-25 25-25z' fill='%234ECDC4' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
+        
+        .message-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .message-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            animation: pulse 3s infinite;
+        }
+        
+        .message-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2rem;
+            color: var(--neutral-800);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-warm);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .message-text {
+            font-size: 1.2rem;
+            color: var(--neutral-700);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .message-signature {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: var(--neutral-600);
+            font-style: italic;
+        }
+        
+        /* ===== 页脚部分 ===== */
+        .footer-section {
+            margin-top: 3rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 2px dotted var(--neutral-300);
+            position: relative;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            color: var(--neutral-500);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-decoration {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5rem;
+        }
+        
+        /* ===== 动画效果 ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* 浮动装饰动画延迟 */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 768px) {
+            .document-container {
+                width: 100%;
+                min-height: auto;
+                padding: 1rem;
+                margin: 1rem;
+            }
+            
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            
+            .cover-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .photo-grid-export {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-card-modern.wide {
+                grid-column: span 1;
+            }
+            
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                padding-left: 60px;
+            }
+            
+            .timeline-content {
+                max-width: 100%;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -15px;
+                border-left: 2px solid var(--neutral-200);
+                border-top: 2px solid var(--neutral-200);
+                transform: rotate(-45deg);
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .corner-decoration {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .message-text {
+                font-size: 1rem;
+            }
+        }
+        
+        /* ===== 打印优化 - 确保完全一致 ===== */
+        @media print {
+            /* 确保使用A4尺寸和正确边距 */
+            @page {
+                size: A4;
+                margin: 20mm;
+            }
+            
+            /* 打印时隐藏不需要的元素 */
+            .no-print {
+                display: none !important;
+            }
+            
+            /* 确保body背景在打印时也显示 */
+            body {
+                background-color: #f9f7f3 !important;
+                background-image: 
+                    radial-gradient(#4ECDC4 0.5px, transparent 0.5px),
+                    radial-gradient(#FFD166 0.5px, transparent 0.5px) !important;
+                background-size: 20px 20px !important;
+                background-position: 0 0, 10px 10px !important;
+                background-repeat: repeat !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* 确保文档容器在打印时完全显示 */
+            .document-container {
+                width: 100% !important;
+                min-height: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                position: relative;
+                background: linear-gradient(135deg, #fef9f3 0%, #f5f9ff 100%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                border: 8px solid white !important;
+            }
+            
+            /* 确保文档背景图案在打印时显示 */
+            .document-container::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: 
+                    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234ECDC4' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60,10 C80,10 90,30 90,50 C90,70 70,90 60,90 C50,90 30,70 30,50 C30,30 40,10 60,10 Z' fill='%23FFD166' fill-opacity='0.03'/%3E%3C/svg%3E") !important;
+                background-position: 10% 20%, 90% 80% !important;
+                background-repeat: no-repeat !important;
+                background-size: 150px, 100px !important;
+                z-index: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保所有装饰元素在打印时显示 */
+            .decor-element, .corner-decoration, .cover-decoration {
+                display: block !important;
+                opacity: 0.15 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保页面边框装饰在打印时显示 */
+            .page-border-top, .page-border-bottom {
+                display: block !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保封面页打印效果 */
+            .cover-page {
+                min-height: calc(100vh - 40mm) !important;
+                margin-bottom: 2rem !important;
+                background: var(--gradient-primary) !important;
+                border-radius: var(--radius-2xl) !important;
+                box-shadow: var(--shadow-xl) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                page-break-after: always;
+                position: relative;
+            }
+            
+            .cover-page::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%) !important;
+                z-index: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保渐变文字在打印时显示 */
+            .cover-title {
+                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保统计卡片背景在打印时显示 */
+            .stat-card {
+                background: rgba(255,255,255,0.15) !important;
+                border: 1px solid rgba(255,255,255,0.2) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .stat-card::before {
+                background: var(--gradient-accent) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .stat-icon {
+                background: var(--gradient-accent) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保时间轴线条在打印时显示 */
+            .timeline-line {
+                background: var(--gradient-accent) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .timeline-dot {
+                background: var(--gradient-warm) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保照片卡片装饰在打印时显示 */
+            .photo-card-modern::before {
+                background: var(--gradient-cool) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .photo-card-modern::after {
+                content: '' !important;
+                position: absolute !important;
+                bottom: 0 !important;
+                right: 0 !important;
+                width: 0 !important;
+                height: 0 !important;
+                border-bottom: 20px solid var(--accent-color) !important;
+                border-left: 20px solid transparent !important;
+                opacity: 0.7 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .photo-sticker {
+                display: block !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .photo-category {
+                background: var(--gradient-cool) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保分类组装饰线在打印时显示 */
+            .category-group::before {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--accent-color),
+                    var(--accent-color) 10px,
+                    transparent 10px,
+                    transparent 20px
+                ) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保成长寄语背景在打印时显示 */
+            .message-section {
+                background: linear-gradient(135deg, rgba(78,205,196,0.1) 0%, rgba(255,209,102,0.1) 100%) !important;
+                border: 2px dashed var(--primary-color) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .message-section::before {
+                background-image: 
+                    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L5 5l25 25 25-25L30 30zm0 0L5 55l25-25 25 25L30 30zm0 0l-25-25 25 25 25-25-25 25zm0 0l25 25-25 25-25-25 25-25z' fill='%234ECDC4' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            .message-title {
+                background: var(--gradient-warm) !important;
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                background-clip: text !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保所有阴影在打印时显示 */
+            .cover-page,
+            .stat-card,
+            .timeline-content,
+            .photo-card-modern,
+            .section-icon {
+                box-shadow: var(--shadow-lg) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* 确保所有动画在打印时停止 */
+            .animate-fadeInUp,
+            .student-avatar,
+            .cover-title,
+            .cover-decoration,
+            .decor-element,
+            .section-icon::after,
+            .student-avatar::after,
+            .message-icon {
+                animation: none !important;
+            }
+            
+            /* 确保字体在打印时正确显示 */
+            * {
+                font-family: 'Comic Neue', 'Nunito', sans-serif !important;
+            }
+            
+            /* 确保图片在打印时正确显示 */
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* 防止元素在打印时被分割 */
+            .photo-card-modern,
+            .timeline-item,
+            .category-group,
+            .message-section,
+            .footer-section {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* 确保每个部分之间有适当的分页 */
+            .cover-page,
+            .timeline-container,
+            .gallery-section,
+            .message-section {
+                page-break-after: auto !important;
+            }
+            
+            /* 确保打印时不缩小内容 */
+            html, body {
+                width: 210mm !important;
+                height: 297mm !important;
+                zoom: 1 !important;
+                transform: scale(1) !important;
+            }
+            
+            /* 确保所有颜色在打印时正确显示 */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+        
+    </style>
+</head>
+<body>
+    <!-- 页面装饰元素 - 增强版 -->
+    <div class="decor-element star" style="top: 10%; left: 5%;">★</div>
+    <div class="decor-element heart" style="top: 25%; right: 8%;">♥</div>
+    <div class="decor-element cloud" style="bottom: 20%; left: 10%;">☁</div>
+    <div class="decor-element star" style="bottom: 10%; right: 5%;">★</div>
+    <div class="decor-element heart" style="top: 60%; left: 8%;">♥</div>
+    <div class="decor-element pencil" style="top: 15%; right: 15%;">✏️</div>
+    <div class="decor-element book" style="bottom: 30%; right: 12%;">📚</div>
+    <div class="decor-element crayon" style="top: 40%; left: 12%;">🖍️</div>
+    
+    <!-- 交互控制面板 -->
+    <div class="no-print" style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+        <div style="background: white; padding: 1rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <button onclick="window.print()" style="background: var(--primary-color); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer; margin: 0.25rem; font-weight: 600; font-family: 'Comic Neue', sans-serif;">
+                <i class="fas fa-print"></i> 打印文档
+            </button>
+        </div>
+    </div>
+    
+    <div class="document-container">
+        <!-- 页面边框装饰 -->
+        <div class="page-border page-border-top"></div>
+        <div class="page-border page-border-bottom"></div>
+        
+        <!-- 角落装饰 -->
+        <div class="corner-decoration top-left">✦✿✦</div>
+        <div class="corner-decoration top-right">✦✿✦</div>
+        <div class="corner-decoration bottom-left">✦✿✦</div>
+        <div class="corner-decoration bottom-right">✦✿✦</div>
+        
+        <!-- 封面页 -->
+        <section class="cover-page animate-fadeInUp">
+            <!-- 封面装饰 -->
+            <div class="cover-decoration cover-star-1">★</div>
+            <div class="cover-decoration cover-star-2">★</div>
+            <div class="cover-decoration cover-heart">♥</div>
+            <div class="cover-decoration cover-cloud">☁</div>
+            <div class="cover-decoration cover-pencil pencil">✏️</div>
+            <div class="cover-decoration cover-book book">📚</div>
+            
+            <div class="cover-content">
+                <div class="student-avatar">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h1 class="cover-title">李艳秋<br>成长档案</h1>
+                <p class="cover-subtitle">记录成长点滴，珍藏美好回忆</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card animate-fadeInUp delay-1">
+                        <div class="stat-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">珍贵照片</div>
+                    </div>
+                    
+                    <div class="stat-card animate-fadeInUp delay-2">
+                        <div class="stat-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">活动分类</div>
+                    </div>
+                    
+                    <div class="stat-card animate-fadeInUp delay-3">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">学习学期</div>
+                    </div>
+                    
+                    <div class="stat-card animate-fadeInUp delay-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-number">2025-2025</div>
+                        <div class="stat-label">成长跨度</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; color: rgba(255,255,255,0.9); font-size: 1.1rem;">
+                    <p><i class="fas fa-graduation-cap"></i> </p>
+                    <p><i class="fas fa-calendar"></i> 生成时间：2025年12月21日</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 成长时间轴 -->
+        <section class="timeline-container">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h2 class="section-title">成长时间轴</h2>
+            </div>
+            
+            <div class="timeline-line"></div>
+            
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" style="animation-delay: 0.0s;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="photo-category">运动会</span>
+                        <span style="margin-left: auto; color: var(--neutral-500); font-size: 0.875rem;">
+                            2025年12月21日
+                        </span>
+                    </div>
+                    <h3 style="color: var(--neutral-800); margin-bottom: 0.75rem;">运动会</h3>
+                    <p style="color: var(--neutral-600); line-height: 1.6;">李艳秋在运动会活动中留下了美好的回忆</p>
+                    <div style="margin-top: 1rem;">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\db7215a5-b7bf-4833-935a-69226aee9a12.png" alt="运动会" 
+                             style="width: 100%; border-radius: 0.5rem; margin-top: 1rem;">
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" style="animation-delay: 0.1s;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="photo-category">运动会</span>
+                        <span style="margin-left: auto; color: var(--neutral-500); font-size: 0.875rem;">
+                            2025年12月21日
+                        </span>
+                    </div>
+                    <h3 style="color: var(--neutral-800); margin-bottom: 0.75rem;">运动会</h3>
+                    <p style="color: var(--neutral-600); line-height: 1.6;">李艳秋在运动会活动中留下了美好的回忆</p>
+                    <div style="margin-top: 1rem;">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 212738.png" alt="运动会" 
+                             style="width: 100%; border-radius: 0.5rem; margin-top: 1rem;">
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" style="animation-delay: 0.2s;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="photo-category">运动会</span>
+                        <span style="margin-left: auto; color: var(--neutral-500); font-size: 0.875rem;">
+                            2025年12月21日
+                        </span>
+                    </div>
+                    <h3 style="color: var(--neutral-800); margin-bottom: 0.75rem;">运动会</h3>
+                    <p style="color: var(--neutral-600); line-height: 1.6;">李艳秋在运动会活动中留下了美好的回忆</p>
+                    <div style="margin-top: 1rem;">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 212936.png" alt="运动会" 
+                             style="width: 100%; border-radius: 0.5rem; margin-top: 1rem;">
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" style="animation-delay: 0.30000000000000004s;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="photo-category">运动会</span>
+                        <span style="margin-left: auto; color: var(--neutral-500); font-size: 0.875rem;">
+                            2025年12月21日
+                        </span>
+                    </div>
+                    <h3 style="color: var(--neutral-800); margin-bottom: 0.75rem;">运动会</h3>
+                    <p style="color: var(--neutral-600); line-height: 1.6;">李艳秋在运动会活动中留下了美好的回忆</p>
+                    <div style="margin-top: 1rem;">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 214045.png" alt="运动会" 
+                             style="width: 100%; border-radius: 0.5rem; margin-top: 1rem;">
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content" style="animation-delay: 0.4s;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span class="photo-category">运动会</span>
+                        <span style="margin-left: auto; color: var(--neutral-500); font-size: 0.875rem;">
+                            2025年12月21日
+                        </span>
+                    </div>
+                    <h3 style="color: var(--neutral-800); margin-bottom: 0.75rem;">运动会</h3>
+                    <p style="color: var(--neutral-600); line-height: 1.6;">李艳秋在运动会活动中留下了美好的回忆</p>
+                    <div style="margin-top: 1rem;">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 214242.png" alt="运动会" 
+                             style="width: 100%; border-radius: 0.5rem; margin-top: 1rem;">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <!-- 照片画廊 -->
+        <section class="gallery-section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h2 class="section-title">珍贵瞬间 · 精彩画廊</h2>
+            </div>
+            
+            <!-- 照片分类组渲染 -->
+            
+            <div class="category-group">
+                <h3 class="category-title">
+                    <span class="category-icon"><i class="fas fa-star"></i></span>
+                    时间轴
+                </h3>
+                <div class="photo-grid-export">
+                    
+                <div class="photo-card-modern animate-fadeInUp tall">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\时间轴\屏幕截图 2025-05-28 103123.png" alt="时间轴" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">时间轴</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">时间轴</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋成长的重要时刻记录</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\时间轴\屏幕截图 2025-05-28 104042.png" alt="时间轴" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">时间轴</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">时间轴</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋成长的重要时刻记录</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <h3 class="category-title">
+                    <span class="category-icon"><i class="fas fa-star"></i></span>
+                    书法比赛
+                </h3>
+                <div class="photo-grid-export">
+                    
+                <div class="photo-card-modern animate-fadeInUp tall">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\书法比赛\屏幕截图 2025-05-28 150258.png" alt="书法比赛" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">书法比赛</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">书法比赛</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在书法比赛活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\书法比赛\屏幕截图 2025-05-28 151353.png" alt="书法比赛" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">书法比赛</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">书法比赛</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在书法比赛活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\书法比赛\屏幕截图 2025-05-28 151811.png" alt="书法比赛" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">书法比赛</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">书法比赛</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在书法比赛活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <h3 class="category-title">
+                    <span class="category-icon"><i class="fas fa-star"></i></span>
+                    入学照
+                </h3>
+                <div class="photo-grid-export">
+                    
+                <div class="photo-card-modern animate-fadeInUp tall">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\入学照\屏幕截图 2025-05-10 104659 - 副本.png" alt="入学照" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">入学照</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">入学照</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在入学照活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\入学照\屏幕截图 2025-05-10 104659.png" alt="入学照" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">入学照</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">入学照</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在入学照活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <h3 class="category-title">
+                    <span class="category-icon"><i class="fas fa-star"></i></span>
+                    运动会
+                </h3>
+                <div class="photo-grid-export">
+                    
+                <div class="photo-card-modern animate-fadeInUp tall">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\db7215a5-b7bf-4833-935a-69226aee9a12.png" alt="运动会" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">运动会</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">运动会</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在运动会活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 212738.png" alt="运动会" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">运动会</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">运动会</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在运动会活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 212936.png" alt="运动会" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">运动会</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">运动会</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在运动会活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 214045.png" alt="运动会" class="photo-image">
+                        <div class="photo-sticker sticker-star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">运动会</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">运动会</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在运动会活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card-modern animate-fadeInUp">
+                    <div class="photo-image-container">
+                        <img src="D:/Desktop/假设检验/student-archive-system/2026年上期-2026级1班\李艳秋\运动会\屏幕截图 2025-11-21 214242.png" alt="运动会" class="photo-image">
+                        <div class="photo-sticker sticker-heart">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="photo-content">
+                        <h4 class="photo-title">运动会</h4>
+                        <div class="photo-meta">
+                            <span class="photo-category">运动会</span>
+                            <span class="photo-semester">未设置</span>
+                        </div>
+                        <p class="photo-description">李艳秋在运动会活动中留下了美好的回忆</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+        </section>
+        
+        <!-- 成长寄语 -->
+        <section class="message-section animate-fadeInUp">
+            <div class="message-content">
+                <div class="message-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h2 class="message-title">成长寄语</h2>
+                <p class="message-text">
+                    亲爱的李艳秋小朋友，成长是一场奇妙的旅程，每一个瞬间都值得被珍藏。
+                    你像一颗小种子，在阳光雨露的滋养下，慢慢长成参天大树。
+                    愿你永远保持好奇与善良，带着勇气和快乐，去探索这个美好的世界，
+                    未来的你，一定会绽放出更耀眼的光芒！
+                </p>
+                <p class="message-signature">—— 爱你的老师与家人 2025年</p>
+            </div>
+        </section>
+        
+        <!-- 页脚 -->
+        <footer class="footer-section">
+            <div class="footer-decoration">✿ ✨ ✿ ✨ ✿</div>
+            <p class="footer-text">李艳秋的成长档案 | 记录美好童年 · 见证点滴成长</p>
+            <p class="footer-text">生成时间：2025-12-21 16:47:18</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 打印前优化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 确保所有图片加载完成后再打印
+            window.printOptimized = function() {
+                const images = document.querySelectorAll('img');
+                let loadedCount = 0;
+                const totalImages = images.length;
+                
+                if (totalImages === 0) {
+                    window.print();
+                    return;
+                }
+                
+                images.forEach(img => {
+                    if (img.complete) {
+                        loadedCount++;
+                    } else {
+                        img.addEventListener('load', function() {
+                            loadedCount++;
+                            if (loadedCount === totalImages) {
+                                window.print();
+                            }
+                        });
+                        img.addEventListener('error', function() {
+                            loadedCount++;
+                            if (loadedCount === totalImages) {
+                                window.print();
+                            }
+                        });
+                    }
+                });
+                
+                // 如果所有图片都已加载
+                if (loadedCount === totalImages) {
+                    setTimeout(() => window.print(), 500);
+                }
+            };
+            
+            // 为照片卡片添加随机装饰
+            const photoCards = document.querySelectorAll('.photo-card-modern');
+            photoCards.forEach(card => {
+                // 随机添加一个小装饰
+                if (Math.random() > 0.7) {
+                    const decor = document.createElement('div');
+                    decor.className = 'photo-decor';
+                    decor.innerHTML = '<i class="fas fa-star"></i>';
+                    decor.style.position = 'absolute';
+                    decor.style.bottom = '10px';
+                    decor.style.left = '10px';
+                    decor.style.zIndex = '2';
+                    card.querySelector('.photo-image-container').appendChild(decor);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
